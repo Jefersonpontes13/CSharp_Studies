@@ -1,0 +1,16 @@
+C:\Users\jeffe\RiderProjects\CSharp_Studies\PilhaCSharp\bin\Debug\net5.0\PilhaCSharp.exe
+C:\Users\jeffe\RiderProjects\CSharp_Studies\PilhaCSharp\bin\Debug\net5.0\PilhaCSharp.deps.json
+C:\Users\jeffe\RiderProjects\CSharp_Studies\PilhaCSharp\bin\Debug\net5.0\PilhaCSharp.runtimeconfig.json
+C:\Users\jeffe\RiderProjects\CSharp_Studies\PilhaCSharp\bin\Debug\net5.0\PilhaCSharp.runtimeconfig.dev.json
+C:\Users\jeffe\RiderProjects\CSharp_Studies\PilhaCSharp\bin\Debug\net5.0\PilhaCSharp.dll
+C:\Users\jeffe\RiderProjects\CSharp_Studies\PilhaCSharp\bin\Debug\net5.0\ref\PilhaCSharp.dll
+C:\Users\jeffe\RiderProjects\CSharp_Studies\PilhaCSharp\bin\Debug\net5.0\PilhaCSharp.pdb
+C:\Users\jeffe\RiderProjects\CSharp_Studies\PilhaCSharp\obj\Debug\net5.0\PilhaCSharp.csproj.AssemblyReference.cache
+C:\Users\jeffe\RiderProjects\CSharp_Studies\PilhaCSharp\obj\Debug\net5.0\PilhaCSharp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jeffe\RiderProjects\CSharp_Studies\PilhaCSharp\obj\Debug\net5.0\PilhaCSharp.AssemblyInfoInputs.cache
+C:\Users\jeffe\RiderProjects\CSharp_Studies\PilhaCSharp\obj\Debug\net5.0\PilhaCSharp.AssemblyInfo.cs
+C:\Users\jeffe\RiderProjects\CSharp_Studies\PilhaCSharp\obj\Debug\net5.0\PilhaCSharp.csproj.CoreCompileInputs.cache
+C:\Users\jeffe\RiderProjects\CSharp_Studies\PilhaCSharp\obj\Debug\net5.0\PilhaCSharp.dll
+C:\Users\jeffe\RiderProjects\CSharp_Studies\PilhaCSharp\obj\Debug\net5.0\ref\PilhaCSharp.dll
+C:\Users\jeffe\RiderProjects\CSharp_Studies\PilhaCSharp\obj\Debug\net5.0\PilhaCSharp.pdb
+C:\Users\jeffe\RiderProjects\CSharp_Studies\PilhaCSharp\obj\Debug\net5.0\PilhaCSharp.genruntimeconfig.cache
