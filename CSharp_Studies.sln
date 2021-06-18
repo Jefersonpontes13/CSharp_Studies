@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StructCSharp", "StructCShar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Revisao", "Revisao\Revisao.csproj", "{281876A9-671C-4070-A7C8-96511F320130}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafio", "Desafio\Desafio.csproj", "{EF68A830-66AC-4235-8A87-6335A8236542}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{281876A9-671C-4070-A7C8-96511F320130}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{281876A9-671C-4070-A7C8-96511F320130}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{281876A9-671C-4070-A7C8-96511F320130}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF68A830-66AC-4235-8A87-6335A8236542}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF68A830-66AC-4235-8A87-6335A8236542}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF68A830-66AC-4235-8A87-6335A8236542}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF68A830-66AC-4235-8A87-6335A8236542}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
