@@ -13,9 +13,49 @@ namespace Desafio
             //PedraPapelTesouraLagartoSpock();
             //MediaCoxinha();
             //ValidacaoDeNotas();
-            
+            ComprasNoSupermercado();
         }
 
+        public static void ComprasNoSupermercado()
+        {
+            var totalDeCasosDeTeste = int.Parse(Console.ReadLine() ?? string.Empty);
+            List<string> listasCompras = new List<string>();
+            List<string> resultados = new List<string>();
+            
+            for (int i = 0; i < totalDeCasosDeTeste; i++)
+            {
+                listasCompras.Add(Console.ReadLine() ?? string.Empty);
+            }
+
+            foreach (var listaCompra in listasCompras)
+            {
+                List<string> novaLista = new List<string>();
+                foreach (var elemento in listaCompra.Split(" "))
+                {
+                    if (!novaLista.Contains(elemento))
+                    {
+                        novaLista.Add(elemento);
+                    }
+                }
+                
+                novaLista.Sort();
+
+                string novaListaString = string.Empty;
+                
+                foreach (var elemento in novaLista)
+                {
+                    novaListaString = novaListaString + elemento + " ";
+                }
+
+                novaLista = new List<string>();
+                resultados.Add(novaListaString);
+                
+            }
+            foreach (var resultado in resultados)
+            {
+                Console.WriteLine(resultado);
+            }
+        }
 
         private static void ValidacaoDeNotas()
         {
