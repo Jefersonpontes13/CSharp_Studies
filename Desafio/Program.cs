@@ -13,7 +13,76 @@ namespace Desafio
             //PedraPapelTesouraLagartoSpock();
             //MediaCoxinha();
             //ValidacaoDeNotas();
-            ComprasNoSupermercado();
+            //ComprasNoSupermercado();
+            ValidadorDeSenhasComRequisitos();
+
+        }
+
+        public static void ValidadorDeSenhasComRequisitos()
+        {
+            List<string> resultados = new List<string>();
+
+            string senha;
+            do
+            {
+                senha = Console.ReadLine() ?? string.Empty;
+
+                if (senha != "" && TemMaiuscula(senha) && TemMinuscula(senha) && TemCaracteresPermitidos(senha))
+                {
+                    resultados.Add("Senha valida.");
+                }
+                else
+                {
+                    resultados.Add("Senha invalida.");
+                }
+                Console.WriteLine(TemMaiuscula(senha));
+                Console.WriteLine(TemMinuscula(senha));
+                Console.WriteLine(TemCaracteresPermitidos(senha));
+            } while (senha != "");
+
+            foreach (var resultado in resultados)
+            {
+                Console.WriteLine(resultado);
+            }
+        }
+
+        public static bool TemCaracteresPermitidos(string senha)
+        {
+            //char[] caracteresPermitidos = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o',
+            //    'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
+            //    'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+            string caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
+            for (int i = 0; i < senha.Length; i++)
+            {
+                if (!caracteres.Contains(senha[i]))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public static bool TemMaiuscula(string senha)
+        {
+            for (int i = 0; i < senha.Length; i++)
+            {
+                if (char.IsUpper(senha[i]))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public static bool TemMinuscula(string senha)
+        {
+            for (int i = 0; i < senha.Length; i++)
+            {
+                if (char.IsLower(senha[i]))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public static void ComprasNoSupermercado()
