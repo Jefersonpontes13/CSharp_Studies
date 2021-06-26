@@ -14,10 +14,55 @@ namespace Desafio
             //MediaCoxinha();
             //ValidacaoDeNotas();
             //ComprasNoSupermercado();
-            ValidadorDeSenhasComRequisitos();
+            //ValidadorDeSenhasComRequisitos();
+            FilaDoBanco();
+            
 
         }
 
+        public static void FilaDoBanco()
+        {
+            List<int> resultados = new List<int>();
+            var totalDeCasosDeTeste = int.Parse(Console.ReadLine() ?? string.Empty);
+
+            for (int i = 0; i < totalDeCasosDeTeste; i++)
+            {
+                List<int> codigosDosClientes = new List<int>();
+                List<int> codigosDosClientesOrdenados = new List<int>();
+                
+                int numeroDeClientes = int.Parse(Console.ReadLine() ?? string.Empty);
+                string codigosClientes = Console.ReadLine() ?? string.Empty;
+
+                foreach (var codigo in codigosClientes.Split(" "))
+                {
+                    codigosDosClientes.Add(int.Parse(codigo));
+                    codigosDosClientesOrdenados.Add(int.Parse(codigo));
+                }
+                codigosDosClientesOrdenados.Sort();
+
+                int resultValue = 0;
+
+                int indiceListaVelha = 0;
+                int indiceListaOrdenada = numeroDeClientes - 1;
+                while (indiceListaVelha < numeroDeClientes && indiceListaOrdenada >= 0)
+                {
+                    if (codigosDosClientes[indiceListaVelha] == codigosDosClientesOrdenados[indiceListaOrdenada])
+                    {
+                        resultValue = resultValue + 1;
+                    }
+
+                    indiceListaOrdenada = indiceListaOrdenada - 1;
+                    indiceListaVelha = indiceListaVelha + 1;
+                }
+                resultados.Add(resultValue);
+            }
+
+            foreach (var resultado in resultados)
+            {
+                Console.WriteLine(resultado);
+            }
+        }
+        
         public static void ValidadorDeSenhasComRequisitos()
         {
             List<string> resultados = new List<string>();
@@ -26,18 +71,24 @@ namespace Desafio
             do
             {
                 senha = Console.ReadLine() ?? string.Empty;
+                Console.WriteLine(TemCaracteresPermitidos(senha));
 
-                if (senha != "" && TemMaiuscula(senha) && TemMinuscula(senha) && TemCaracteresPermitidos(senha))
+                if (
+                    TemMaiuscula(senha) &&
+                    TemMinuscula(senha) &&
+                    TemCaracteresPermitidos(senha) &&
+                    senha.Length >= 6 && 
+                    senha.Length <= 32)
                 {
                     resultados.Add("Senha valida.");
                 }
                 else
                 {
-                    resultados.Add("Senha invalida.");
+                    if (senha != "")
+                    {
+                        resultados.Add("Senha invalida.");
+                    }
                 }
-                Console.WriteLine(TemMaiuscula(senha));
-                Console.WriteLine(TemMinuscula(senha));
-                Console.WriteLine(TemCaracteresPermitidos(senha));
             } while (senha != "");
 
             foreach (var resultado in resultados)
@@ -51,7 +102,7 @@ namespace Desafio
             //char[] caracteresPermitidos = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o',
             //    'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
             //    'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
-            string caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
+            string caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             for (int i = 0; i < senha.Length; i++)
             {
                 if (!caracteres.Contains(senha[i]))
@@ -73,6 +124,7 @@ namespace Desafio
             }
             return false;
         }
+        
         public static bool TemMinuscula(string senha)
         {
             for (int i = 0; i < senha.Length; i++)
