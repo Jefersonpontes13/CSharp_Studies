@@ -16,7 +16,19 @@ namespace Desafio
             //ComprasNoSupermercado();
             //ValidadorDeSenhasComRequisitos();
             // FilaDoBanco();
-            SequenciaLogica();
+            // SequenciaLogica();
+            Media2();
+        }
+
+        public static void Media2()
+        {
+            double A, B, C, mediaP;
+            A = double.Parse(Console.ReadLine());
+            B = double.Parse(Console.ReadLine());
+            C = double.Parse(Console.ReadLine());
+            mediaP = ((A * 2) + (B * 3) + (C * 5)) / (2 + 3 + 5);
+            Console.WriteLine("MEDIA = {0}", mediaP.ToString("N1"));
+            Console.ReadKey();
         }
 
         public static void SequenciaLogica()
