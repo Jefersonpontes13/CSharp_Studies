@@ -17,7 +17,32 @@ namespace Desafio
             //ValidadorDeSenhasComRequisitos();
             // FilaDoBanco();
             // SequenciaLogica();
-            Media2();
+            //Media2();
+            PositivosEMedia();
+        }
+
+        public static void PositivosEMedia()
+        {
+            int QUANTIDADE_VALORES = 6;
+            
+            double media = 0;
+            int postivos = 0;
+
+            for (int valor = 0; valor < 6; valor++)
+            {
+                double valorLido = double.Parse(Console.ReadLine());
+                if (valorLido > 0)
+                {
+                    postivos++;
+                    media += valorLido;
+                }
+
+            }
+
+            media = (media / postivos) - 0.0001;
+            
+            Console.WriteLine("{0} valores positivos", postivos);
+            Console.WriteLine("{0}", media.ToString("0.0"));
         }
 
         public static void Media2()
