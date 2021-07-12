@@ -15,9 +15,21 @@ namespace Desafio
             //ValidacaoDeNotas();
             //ComprasNoSupermercado();
             //ValidadorDeSenhasComRequisitos();
-            FilaDoBanco();
-            
+            // FilaDoBanco();
+            SequenciaLogica();
+        }
 
+        public static void SequenciaLogica()
+        {
+            int numeroEntrada = Convert.ToInt32(Console.ReadLine());
+            for (int valorAtual = 1; valorAtual <= numeroEntrada; valorAtual++)
+            {
+                int valorAtual2 = (int) Math.Pow(valorAtual, 2);
+                int valorAtual3 = (int) Math.Pow(valorAtual, 3);
+                Console.WriteLine("{0} {1} {2}", valorAtual, valorAtual2, valorAtual3);
+                Console.WriteLine("{0} {1} {2}", valorAtual, valorAtual2 + 1, valorAtual3 + 1);
+
+            }
         }
 
         public static void FilaDoBanco()
@@ -29,7 +41,7 @@ namespace Desafio
             {
                 List<int> codigosDosClientes = new List<int>();
                 List<int> codigosDosClientesOrdenados = new List<int>();
-                
+
                 int numeroDeClientes = int.Parse(Console.ReadLine() ?? string.Empty);
                 string codigosClientes = Console.ReadLine() ?? string.Empty;
 
@@ -38,6 +50,7 @@ namespace Desafio
                     codigosDosClientes.Add(int.Parse(codigo));
                     codigosDosClientesOrdenados.Add(int.Parse(codigo));
                 }
+
                 codigosDosClientesOrdenados.Sort();
 
                 int resultValue = 0;
@@ -54,6 +67,7 @@ namespace Desafio
                     indiceListaOrdenada = indiceListaOrdenada - 1;
                     indiceListaVelha = indiceListaVelha + 1;
                 }
+
                 resultados.Add(resultValue);
             }
 
@@ -62,7 +76,7 @@ namespace Desafio
                 Console.WriteLine(resultado);
             }
         }
-        
+
         public static void ValidadorDeSenhasComRequisitos()
         {
             List<string> resultados = new List<string>();
@@ -77,7 +91,7 @@ namespace Desafio
                     TemMaiuscula(senha) &&
                     TemMinuscula(senha) &&
                     TemCaracteresPermitidos(senha) &&
-                    senha.Length >= 6 && 
+                    senha.Length >= 6 &&
                     senha.Length <= 32)
                 {
                     resultados.Add("Senha valida.");
@@ -110,6 +124,7 @@ namespace Desafio
                     return false;
                 }
             }
+
             return true;
         }
 
@@ -122,9 +137,10 @@ namespace Desafio
                     return true;
                 }
             }
+
             return false;
         }
-        
+
         public static bool TemMinuscula(string senha)
         {
             for (int i = 0; i < senha.Length; i++)
@@ -134,6 +150,7 @@ namespace Desafio
                     return true;
                 }
             }
+
             return false;
         }
 
@@ -142,7 +159,7 @@ namespace Desafio
             var totalDeCasosDeTeste = int.Parse(Console.ReadLine() ?? string.Empty);
             List<string> listasCompras = new List<string>();
             List<string> resultados = new List<string>();
-            
+
             for (int i = 0; i < totalDeCasosDeTeste; i++)
             {
                 listasCompras.Add(Console.ReadLine() ?? string.Empty);
@@ -158,11 +175,11 @@ namespace Desafio
                         novaLista.Add(elemento);
                     }
                 }
-                
+
                 novaLista.Sort();
 
                 string novaListaString = string.Empty;
-                
+
                 foreach (var elemento in novaLista)
                 {
                     novaListaString = novaListaString + elemento + " ";
@@ -170,8 +187,8 @@ namespace Desafio
 
                 novaLista = new List<string>();
                 resultados.Add(novaListaString);
-                
             }
+
             foreach (var resultado in resultados)
             {
                 Console.WriteLine(resultado);
@@ -195,7 +212,7 @@ namespace Desafio
                         resultados.Add("nota invalida");
                     }
                 } while (nota1 < 0 | nota1 > 10);
-                
+
                 do
                 {
                     nota2 = float.Parse(Console.ReadLine() ?? string.Empty);
@@ -205,7 +222,7 @@ namespace Desafio
                         resultados.Add("nota invalida");
                     }
                 } while (nota2 < 0 | nota2 > 10);
-                
+
                 //Console.WriteLine("media = " + ((nota1 + nota2) / 2).ToString("N2"));
                 resultados.Add("media = " + ((nota1 + nota2) / 2).ToString("N2"));
                 do
@@ -214,12 +231,9 @@ namespace Desafio
                     resultados.Add("novo calculo (1-sim 2-nao)");
                     program = Console.ReadLine() ?? string.Empty;
                     //Console.WriteLine(program);
-
                 } while (program != "1" && program != "2");
-                
-                
             } while (program == "1");
-            
+
             foreach (var resultado in resultados)
             {
                 Console.WriteLine(resultado);
